@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "retrieve-search-results-client-side-solution",
+    "id": "74e57696-973f-45a5-9eea-9e9e1347594e",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false
+  },
+  "paths": {
+    "zippedPackage": "solution/retrieve-search-results.sppkg"
+  }
+}

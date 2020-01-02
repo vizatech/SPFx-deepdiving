@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "react-get-items-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/reactGetItems/ReactGetItemsWebPart.js",
+          "manifest": "./src/webparts/reactGetItems/ReactGetItemsWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "ReactGetItemsWebPartStrings": "lib/webparts/reactGetItems/loc/{locale}.js"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "create-pn-p-list-client-side-solution",
+    "id": "cc771d8f-ddbc-4265-a3a3-5e63d91a0ae8",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false
+  },
+  "paths": {
+    "zippedPackage": "solution/create-pn-p-list.sppkg"
+  }
+}

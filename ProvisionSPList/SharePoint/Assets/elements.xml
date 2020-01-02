@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+
+    <Field ID="{11ED4026-1C15-4636-80EF-C27C41DB90E0}"
+        Name="EmployeeName"
+        DisplayName="Имя сотрудника"
+        Type="Text"
+        Required="FALSE"
+        Group="Employee" />
+
+    <Field ID="{1DA0BA30-F87A-4D1B-9303-729AA02BEE25}"
+        Name="PreviousCompany"
+        DisplayName="Предшествующая компания"
+        Type="Text"
+        Required="FALSE"
+        Group="Employee" />
+
+    <Field ID="{145B5D00-E3AE-48EB-BB75-9699922AF8D8}"
+        Name="JoiningDate"
+        DisplayName="Дата принятия"
+        Type="DateTime"
+        Format="DateOnly"
+        Required="FALSE"
+        Group="Employee" />
+
+    <Field ID="{197F8587-C417-458D-885E-4FBC28D1F612}"
+        Name="Expertise"
+        DisplayName="Специализация"
+        Type="Choice"
+        Required="FALSE"
+        Group="Employee">
+        <CHOICES>
+            <CHOICE>SPFx</CHOICE>
+            <CHOICE>JavaScript</CHOICE>
+            <CHOICE>ASP.NET</CHOICE>
+            <CHOICE>React</CHOICE>
+            <CHOICE>C#</CHOICE>
+            <CHOICE>SharePoint Designer</CHOICE>
+        </CHOICES>    
+    </Field>
+
+    <Field ID="{10E72105-7577-4E9E-A758-BBBE8FF4E9BA}"
+        Name="Experience"
+        DisplayName="Опыт работы"
+        Group="Employee"
+        Type="Number"
+        Required="False"
+        Min="0"
+        Max="30"
+        Percentage="FALSE">
+    </Field>
+
+    <ContentType ID="0x010100FA0963FA69A646AA916D2E41284FC9D1"
+        Name="EmployeeContentType"
+        Group="Employee Content Types"
+        Description="This is the Content Type for Employee Onboarding">
+
+        <FieldRefs>
+            <FieldRef ID="{11ED4026-1C15-4636-80EF-C27C41DB90E0}" />
+            <FieldRef ID="{1DA0BA30-F87A-4D1B-9303-729AA02BEE25}" />
+            <FieldRef ID="{145B5D00-E3AE-48EB-BB75-9699922AF8D8}" />
+            <FieldRef ID="{197F8587-C417-458D-885E-4FBC28D1F612}" />
+            <FieldRef ID="{10E72105-7577-4E9E-A758-BBBE8FF4E9BA}" />
+        </FieldRefs>
+    </ContentType>
+
+    <ListInstance
+        CustomSchema="schema.xml"
+        FeatureId="00bfea71-de22-43b2-a848-c05709900100"
+        Title="Employee"
+        Description="Employee List created using SharePoint Framework"
+        TemplateType="100"
+        Url="Lists/Employee">
+        <Data>
+            <Rows>
+                <Row>
+                    <Field Name="EmployeeName">Priyaranjan</Field>
+                    <Field Name="PreviousCompany">Cognizant</Field>
+                    <Field Name="JoiningDate">10/08/2010</Field>
+                    <Field Name="Expertise">SPFx</Field>
+                    <Field Name="Experience">7</Field>
+                </Row>
+                <Row>
+                    <Field Name="EmployeeName">Nimmy</Field>
+                    <Field Name="PreviousCompany">SunTech</Field>
+                    <Field Name="JoiningDate">11/04/2012</Field>
+                    <Field Name="Expertise">JavaScript</Field>
+                    <Field Name="Experience">4</Field>
+                </Row>
+                <Row>
+                    <Field Name="EmployeeName">Jinesh</Field>
+                    <Field Name="PreviousCompany">IBM</Field>
+                    <Field Name="JoiningDate">12/03/2006</Field>
+                    <Field Name="Expertise">ASP.NET</Field>
+                    <Field Name="Experience">11</Field>
+                </Row>
+            </Rows>
+        </Data>
+    </ListInstance>
+</Elements> 

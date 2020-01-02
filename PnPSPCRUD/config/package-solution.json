@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "pn-pspcrud-client-side-solution",
+    "id": "67333732-f41b-46c6-a125-1dd593be2b5a",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false
+  },
+  "paths": {
+    "zippedPackage": "solution/pn-pspcrud.sppkg"
+  }
+}

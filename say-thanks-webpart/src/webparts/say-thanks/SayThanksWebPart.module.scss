@@ -1,0 +1,16 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+
+.saythanks {
+
+  .input {    
+    border: 1px solid gray;    
+    width: 400px;    
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px; 
+  } 
+
+  .successIndicator {    
+    border: 0px; 
+  }
+  
+}

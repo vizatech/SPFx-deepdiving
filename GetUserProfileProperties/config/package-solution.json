@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "get-user-profile-properties-client-side-solution",
+    "id": "93066273-83c0-42ae-9f8b-197454fb483d",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false
+  },
+  "paths": {
+    "zippedPackage": "solution/get-user-profile-properties.sppkg"
+  }
+}

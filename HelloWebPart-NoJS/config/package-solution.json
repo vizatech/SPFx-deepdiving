@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "hello-web-part-no-js-client-side-solution",
+    "id": "ab2d0f6d-b125-47c1-b58f-b9e8a281e33e",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false
+  },
+  "paths": {
+    "zippedPackage": "solution/hello-web-part-no-js.sppkg"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "retrieve-search-results-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/retrieveSearchResults/RetrieveSearchResultsWebPart.js",
+          "manifest": "./src/webparts/retrieveSearchResults/RetrieveSearchResultsWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "RetrieveSearchResultsWebPartStrings": "lib/webparts/retrieveSearchResults/loc/{locale}.js"
+  }
+}

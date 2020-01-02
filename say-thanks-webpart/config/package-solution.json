@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "Say Thanks",
+    "id": "da077631-bc55-427b-ba6b-5663c8e26419",
+    "version": "2.0.2.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false
+  },
+  "paths": {
+    "zippedPackage": "solution/say-thanks-webpart.sppkg"
+  }
+}
