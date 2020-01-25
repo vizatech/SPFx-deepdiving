@@ -2,7 +2,7 @@
 ### Вэб-часть написана с целью отработки техник SPFx ###
 
 идея навеяна примером по отзывам из книги *Jussi Roine, Olli Jääskeläinen*:
-> SharePoint Development with the SharePoint Framework
+> SharePoint Development with the SharePoint Framework >
 но, в конечном итоге получился совершенно иной (и посмыслу и по реализации) модуль
 
 ## Технологический стек
