@@ -3,7 +3,9 @@ import {
   EnvironmentType 
 } from '@microsoft/sp-core-library'; 
 
-import { Version } from '@microsoft/sp-core-library';
+import { 
+  Version 
+} from '@microsoft/sp-core-library';
 
 import {
   BaseClientSideWebPart,
@@ -11,20 +13,18 @@ import {
   PropertyPaneTextField
 } from '@microsoft/sp-webpart-base';
 
-import { escape } from '@microsoft/sp-lodash-subset';
+import { 
+  SPHttpClient 
+} from '@microsoft/sp-http'; 
+
+import * as strings from 'GetSpListItemsWebPartStrings';
 
 import styles from './GetSpListItemsWebPart.module.scss';
-import * as strings from 'GetSpListItemsWebPartStrings';
+import MockHttpClient from './MockHttpClient';
 
 export interface IGetSpListItemsWebPartProps {
   description: string;
 }
-
-import MockHttpClient from './MockHttpClient';
-
-import { 
-  SPHttpClient 
-} from '@microsoft/sp-http'; 
 
 export interface ISPLists {
   value: ISPList[];
@@ -37,9 +37,8 @@ export interface ISPList {
   Location: string;
 }
 
-export default class GetSpListItemsWebPart extends 
-BaseClientSideWebPart<IGetSpListItemsWebPartProps> {
-
+export default class GetSpListItemsWebPart extends BaseClientSideWebPart<IGetSpListItemsWebPartProps> 
+{
   public render(): void {
     this.domElement.innerHTML = `
     <div class="${styles.getSpListItems}"> 
@@ -94,27 +93,38 @@ BaseClientSideWebPart<IGetSpListItemsWebPartProps> {
   }
 
   private _getMockListData(): Promise<ISPLists> {
-    return MockHttpClient.get(this.context.pageContext.web.absoluteUrl).then( () => { 
-      const listData: ISPLists = { 
-        value: [
-          { EmployeeId: '22-05-2018', EmployeeName: 'Олег Нестеров', Experience: '10 лет', Location:'Россия' },
-          { EmployeeId: '20-10-2017', EmployeeName: 'Сергей Невинный', Experience: '4 лет', Location:'Беларусь' },
-          { EmployeeId: '05-05-2016', EmployeeName: 'Варвара Беленькая', Experience: '7 лет', Location:'Россия' },
-          { EmployeeId: '13-05-2018', EmployeeName: 'Максим Всегда', Experience: '2 лет', Location:'Украина' },
-          { EmployeeId: '25-05-2019', EmployeeName: 'Ирина Вчерашняя', Experience: '8 лет', Location:'Россия' },  
-        ]
-      }; 
-      return listData; 
-     }) as Promise<ISPLists>; 
+    return MockHttpClient
+      .get(
+        this.context.pageContext.web.absoluteUrl
+      )
+      .then( 
+        () => { 
+          const listData: ISPLists = { 
+              value: [
+                { EmployeeId: '22-05-2018', EmployeeName: 'Олег Нестеренко', Experience: '10 лет', Location:'Россия' },
+                { EmployeeId: '20-10-2017', EmployeeName: 'Сергей Невинный', Experience: '4 лет', Location:'Беларусь' },
+                { EmployeeId: '05-05-2016', EmployeeName: 'Варвара Беленькая', Experience: '7 лет', Location:'Россия' },
+                { EmployeeId: '13-05-2018', EmployeeName: 'Максим Всегда', Experience: '2 лет', Location:'Украина' },
+                { EmployeeId: '25-05-2019', EmployeeName: 'Галина Вчерашняя', Experience: '8 лет', Location:'Россия' },  
+              ]
+          }; 
+          return listData; 
+        }
+      ) as Promise<ISPLists>; 
   }
 
   private _getListData(): Promise<ISPLists> {
-    return this.context.spHttpClient.get( this.context.pageContext.web.absoluteUrl + 
-      "/_api/web/lists/GetByTitle('EmployeeList')/Items",
-      SPHttpClient.configurations.v1).then( (response) => { 
-        debugger; 
-        return response.json(); 
-      });
+    return this.context.spHttpClient
+      .get( 
+        this.context.pageContext.web.absoluteUrl + "/_api/web/lists/GetByTitle('EmployeeList')/Items",
+        SPHttpClient.configurations.v1
+      )
+      .then( 
+        (response) => { 
+          debugger; 
+          return response.json(); 
+        }
+      );
   }
 
   private _renderListAsync(): void {
@@ -127,7 +137,12 @@ BaseClientSideWebPart<IGetSpListItemsWebPartProps> {
 
   private _renderList(items: ISPList[]): void { 
     let html = '<table class="TFtable" border=1 width=100% style="border-collapse: collapse;">'; 
-    html += '<th>EmployeeId</th><th>EmployeeName</th><th>Experience</th><th>Location</th>'; 
+    html += `
+      <th>EmployeeId</th>
+      <th>EmployeeName</th>
+      <th>Experience</th>
+      <th>Location</th>
+    `; 
     items.forEach( (item: ISPList) => {
       html += `
         <tr>
@@ -139,6 +154,7 @@ BaseClientSideWebPart<IGetSpListItemsWebPartProps> {
       `;      
     });
     html += '</table>';
+    
     const listContainer: Element = this.domElement.querySelector('#spListContainer'); 
     listContainer.innerHTML = html;
   }

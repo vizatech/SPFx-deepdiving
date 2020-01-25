@@ -9,14 +9,14 @@ import {
 } from '@microsoft/sp-webpart-base';
 
 import {  
-  IPropertyPaneConfiguration,
-  PropertyPaneTextField
+  PropertyPaneTextField,
+  IPropertyPaneConfiguration
 } from '@microsoft/sp-property-pane';
 
 import { 
   SPHttpClient, 
-  ISPHttpClientOptions, 
-  SPHttpClientResponse 
+  SPHttpClientResponse, 
+  ISPHttpClientOptions
 } from '@microsoft/sp-http'; 
 
 import { 
@@ -33,7 +33,7 @@ export interface ISayThanksWebPartProps {
 }
 
 export default class SayThanksWebPart 
-  extends BaseClientSideWebPart<ISayThanksWebPartProps> 
+                            extends BaseClientSideWebPart<ISayThanksWebPartProps> 
 {
 
   public render(): void {
@@ -247,12 +247,14 @@ export default class SayThanksWebPart
                 }),
                 PropertyPaneTextField('wordsOfThanks', {
                   label: strings.hintTextWordsOfThanks
-                }),                
+                }), 
+                            
               ]
             }
           ]
         }
       ]
-    };
+    };    
   }
+
 }

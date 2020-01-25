@@ -6,6 +6,9 @@ npm-debug.log*
 # Dependency directories
 node_modules
 
+# Account Data
+deploy-azure-storage.json
+
 # Build generated files
 dist
 lib
