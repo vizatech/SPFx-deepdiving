@@ -67,24 +67,24 @@ export default class SayThanksWebPart
     `;
 
     this.selectUser = this.selectUser.bind(this);      
-    const userNameInput: 
-      HTMLInputElement = this.domElement.getElementsByClassName("username")[0] as HTMLInputElement;      
-      userNameInput.addEventListener("keyup", this.selectUser);
+    const userNameInput: HTMLInputElement = 
+                this.domElement.getElementsByClassName("username")[0] as HTMLInputElement;      
+    userNameInput.addEventListener("keyup", this.selectUser);
 
     this.setComment = this.setComment.bind(this);      
-    const textInput: 
-      HTMLInputElement = this.domElement.getElementsByClassName("wordsofthanks")[0] as HTMLInputElement;      
+    const textInput: HTMLInputElement = 
+                this.domElement.getElementsByClassName("wordsofthanks")[0] as HTMLInputElement;      
     textInput.addEventListener("keyup", this.setComment);
 
     this.sendThanks = this.sendThanks.bind(this);      
-    const buttonAddThanks: 
-      HTMLButtonElement = this.domElement.getElementsByClassName("addThanks")[0] as HTMLButtonElement;      
+    const buttonAddThanks: HTMLButtonElement = 
+                this.domElement.getElementsByClassName("addThanks")[0] as HTMLButtonElement;      
     buttonAddThanks.onclick = this.sendThanks; 
 
     this.getWebContext = this.getWebContext.bind(this);      
-    const buttonGetWebContext: 
-      HTMLButtonElement = this.domElement.getElementsByClassName("getWebContext")[0] as HTMLButtonElement;      
-      buttonGetWebContext.onclick = this.getWebContext; 
+    const buttonGetWebContext: HTMLButtonElement = 
+                this.domElement.getElementsByClassName("getWebContext")[0] as HTMLButtonElement;      
+    buttonGetWebContext.onclick = this.getWebContext; 
 
     this.buttonAddThanksDisabled(); 
   }
@@ -177,7 +177,7 @@ export default class SayThanksWebPart
     this.context.statusRenderer.clearError(this.domElement); 
 
     const paragraphElement: HTMLParagraphElement = 
-    this.domElement.getElementsByClassName(styles.successIndicator)[0] as HTMLParagraphElement;    
+                  this.domElement.getElementsByClassName(styles.successIndicator)[0] as HTMLParagraphElement;    
     paragraphElement.innerHTML = "";
 
     if ( Environment.type === EnvironmentType.Local ) {      
