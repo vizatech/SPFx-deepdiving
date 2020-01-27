@@ -1,12 +1,12 @@
+import {
+  BaseClientSideWebPart
+} from '@microsoft/sp-webpart-base';
+
 import { 
   Version,
   Environment, 
   EnvironmentType 
 } from '@microsoft/sp-core-library';
-
-import {
-  BaseClientSideWebPart
-} from '@microsoft/sp-webpart-base';
 
 import {  
   PropertyPaneTextField,
@@ -27,7 +27,7 @@ import * as strings from 'SayThanksWebPartStrings';
 
 import styles from './SayThanksWebPart.module.scss';
 
-export interface ISayThanksWebPartProps {
+export  interface  ISayThanksWebPartProps {
   userName: string;
   wordsOfThanks: string;
 }

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "geo-probes-webpart-client-side-solution",
+    "id": "605f78c2-544a-4171-8bd1-751c9a39ebb0",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false
+  },
+  "paths": {
+    "zippedPackage": "solution/geo-probes-webpart.sppkg"
+  }
+}

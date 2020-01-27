@@ -1,26 +1,8 @@
-## get-sp-list-items
+## Source
+Getting Started with SharePoint Framework Development using TypeScript, PnP JS and React JS
 
-This is where you include your WebPart documentation.
+### Topic
+Create SharePoint Framework Client Web Part to Retrieve and Display List Items
 
-### Building the code
+### Key instruments
 
-```bash
-git clone the repo
-npm i
-npm i -g gulp
-gulp
-```
-
-This package produces the following:
-
-* lib/* - intermediate-stage commonjs build artifacts
-* dist/* - the bundled script, along with other resources
-* deploy/* - all resources which should be uploaded to a CDN.
-
-### Build options
-
-gulp clean - TODO
-gulp test - TODO
-gulp serve - TODO
-gulp bundle - TODO
-gulp package-solution - TODO
