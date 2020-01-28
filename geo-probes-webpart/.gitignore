@@ -13,6 +13,8 @@ solution
 temp
 *.sppkg
 
+deploy-azure-storage.json
+
 # Coverage directory used by tools like istanbul
 coverage
 

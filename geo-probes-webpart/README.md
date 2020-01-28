@@ -1,26 +1,43 @@
-## geo-probes-webpart
+# Вэб-часть "Геологические пробы!"
+### Вэб-часть написана с целью отработки техник SPFx ###
 
-This is where you include your WebPart documentation.
+идея навеяна примером по отзывам из книги *Jussi Roine, Olli Jääskeläinen*:
+> SharePoint Development with the SharePoint Framework
 
-### Building the code
+но, в конечном итоге получился совершенно иной (и посмыслу и по реализации) модуль
 
-```bash
-git clone the repo
-npm i
-npm i -g gulp
-gulp
-```
+## Технологический стек
+> SPFx / TypeScript
 
-This package produces the following:
+### Полезное по структуре решения
 
-* lib/* - intermediate-stage commonjs build artifacts
-* dist/* - the bundled script, along with other resources
-* deploy/* - all resources which should be uploaded to a CDN.
 
-### Build options
+### Полезное по кодингу
 
-gulp clean - TODO
-gulp test - TODO
-gulp serve - TODO
-gulp bundle - TODO
-gulp package-solution - TODO
+1. Разобран механизм подстановки источника выдачи данных 
+в зависимости от среды исполнения кода  _локальной или продуктовой_
+
+2. Привязка к управляющим элементам фронтенда (button) - обработчиков событий нажатия
+
+3. Получение данных из управляющих элеметов (input) в коде обработчиков событий
+
+4. Отработка операций CRUD для Списков сайтовой коллекции посредством REST API-запросов 
+библиотеки `.spHttpClient`, подготовка GET и POST запросов
+
+6. Обработка статуса ответа сервера по результатам операции со списком `SPHttpClientRespons.status`
+
+7. Обработка данных ответа сервера - преобразование XML в JSON и распарсивание джейсона в объект колллекции элементов
+
+8. Отработка передачи данных во фронтэнд.
+
+
+## Идея веб-части
+
+* Вэб-часть позволяет автоматически создавать, проверять наличие и удалять списки, 
+* необходимые для работы функциональности проекта "Геологические пробы!"
+* В общем задумка такая, то это могла бы быть веб-часть развертывания инфраструктуры проекта 
+
+## Лицензирование
+Не подлежит копированию
+
+

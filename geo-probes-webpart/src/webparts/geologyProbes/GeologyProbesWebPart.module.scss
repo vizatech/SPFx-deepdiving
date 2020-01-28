@@ -1,9 +1,15 @@
 @import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
 
-.geologyProbes {
   .container {
-    max-width: 700px;
-    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: stretch;
+    max-width: 800px;
+    padding: 10px 0px;
+    margin: auto;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
   }
 
@@ -23,6 +29,7 @@
   }
 
   .title {
+    justify-content: center;
     @include ms-font-xl;
     @include ms-fontColor-white;
   }
@@ -41,9 +48,10 @@
     // Our button
     text-decoration: none;
     height: 32px;
+    margin-left: 10px;
 
     // Primary Button
-    min-width: 80px;
+    min-width: 120px;
     background-color: $ms-color-themePrimary;
     border-color: $ms-color-themePrimary;
     color: $ms-color-white;
@@ -71,4 +79,25 @@
       display: inline-block;
     }
   }
-}
+
+  .input {
+     // Our input
+     text-decoration: none;
+     height: 24px;   
+     min-width: 240px;
+     margin-left: 10px;
+  }
+
+  .infoBlock {
+    margin-left: 30px;
+    min-width: 300px;
+  }
+
+  .headerH3 {
+    margin-left: 10px;
+  }
+
+  .AndriiSyngaivskyi-SystemInfo {
+    margin: 40px;
+    padding: 40px;
+  }
