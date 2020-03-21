@@ -1,0 +1,25 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "Provision List Solution",
+    "id": "18a78615-8f8c-424d-b5b6-17164c84b5bb",
+    "version": "1.0.15.4",
+    "features": [
+      {
+        "title": "Provision List Solution - Feature",
+        "description": "Развертывание списка и его компонентов",
+        "id": "BEEEA59D-9D46-4ADF-ACFF-EA307A1ADD43",
+        "version": "1.0.15.4",
+        "assets": {
+          "elementManifests": [ "elements_cts_V11.xml"  ],
+          "elementFiles": [ ],
+          "upgradeActions": [ "upgradeactionsV11.xml" ]
+        }
+      }
+    ],
+    "includeClientSideAssets": true
+  },
+  "paths": {
+    "zippedPackage": "solution/provision-sp-list.sppkg"
+  }
+}

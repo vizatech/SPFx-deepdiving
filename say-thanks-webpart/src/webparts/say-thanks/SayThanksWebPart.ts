@@ -198,10 +198,11 @@ export default class SayThanksWebPart
         return;
     } else {
     url = `
-      ${this.context.pageContext.site.absoluteUrl}/_api/web/lists/
-      getbytitle('${this.context.pageContext.list.title}')/
-      items('${this.context.pageContext.listItem.id}')/
-      FieldValuesAsHtml
+      ${this.context.pageContext.site.absoluteUrl}/
+        _api/web/lists/
+          getbytitle('${this.context.pageContext.list.title}')/
+            items('${this.context.pageContext.listItem.id}')/
+              FieldValuesAsHtml
       `; 
     }
 
@@ -247,8 +248,8 @@ export default class SayThanksWebPart
                 }),
                 PropertyPaneTextField('wordsOfThanks', {
                   label: strings.hintTextWordsOfThanks
-                }), 
-                            
+                }),
+
               ]
             }
           ]

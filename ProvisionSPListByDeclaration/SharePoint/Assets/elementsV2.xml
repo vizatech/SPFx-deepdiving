@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
     <ListInstance
-        FeatureId="00bfea71-de22-43b2-a848-c05709900100"
+        FeatureId="11111111-1111-1111-1111-111111111111"
         Title="Список, добавленный с обновлением v.2"
-        Description="List added through Upgrade Action"
-        TemplateType="100"
-        Url="Lists/ListAddedViaUpgrade">
+        Description="Task List added through Upgrade Action"
+        TemplateType="171"
+        Url="Lists/TasksViaUpgrade1">
     </ListInstance>
 </Elements>

@@ -1,0 +1,30 @@
+<List 
+    xmlns:ows="Microsoft SharePoint" 
+    Title="Basic List" 
+    EnableContentTypes="TRUE" 
+    FolderCreation="FALSE" 
+    Direction="$Resources:Direction;" 
+    Url="Lists/Basic List"
+    BaseType="0" 
+    xmlns="http://schemas.microsoft.com/sharepoint/">
+    
+    <MetaData>
+        <Forms>
+            <Form 
+                Type="DisplayForm" 
+                Url="DispForm.aspx" 
+                SetupPath="pages\Default.aspx?action=display" 
+                WebPartZoneID="Main" />
+            <Form 
+                Type="EditForm" 
+                Url="EditForm.aspx" 
+                SetupPath="pages\Default.aspx?action=edit" 
+                WebPartZoneID="Main" />
+            <Form 
+                Type="NewForm" 
+                Url="NewForm.aspx" 
+                SetupPath="pages\Default.aspx?action=new" 
+                WebPartZoneID="Main" />
+        </Forms>
+    </MetaData>
+</List>

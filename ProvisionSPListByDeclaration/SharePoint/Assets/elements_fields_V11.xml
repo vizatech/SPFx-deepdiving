@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+
+    <Field ID="{BB194C4E-C7DB-4082-950F-F444DD2E58DA}"
+        Name="ND_HouseSubNum"
+        DisplayName="HouseSubNum"
+        Type="Number"
+        Required="FALSE"
+        Group="NetzeDuisburg" />
+
+</Elements> 

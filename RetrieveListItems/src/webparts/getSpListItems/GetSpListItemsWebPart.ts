@@ -1,17 +1,17 @@
+import {
+  BaseClientSideWebPart,
+} from '@microsoft/sp-webpart-base';
+
+import {  
+  PropertyPaneTextField,
+  IPropertyPaneConfiguration
+} from '@microsoft/sp-property-pane';
+
 import { 
+  Version,
   Environment, 
   EnvironmentType 
 } from '@microsoft/sp-core-library'; 
-
-import { 
-  Version 
-} from '@microsoft/sp-core-library';
-
-import {
-  BaseClientSideWebPart,
-  IPropertyPaneConfiguration,
-  PropertyPaneTextField
-} from '@microsoft/sp-webpart-base';
 
 import { 
   SPHttpClient 
@@ -20,10 +20,12 @@ import {
 import * as strings from 'GetSpListItemsWebPartStrings';
 
 import styles from './GetSpListItemsWebPart.module.scss';
+
 import MockHttpClient from './MockHttpClient';
 
 export interface IGetSpListItemsWebPartProps {
   description: string;
+  environment: string;
 }
 
 export interface ISPLists {
@@ -49,7 +51,7 @@ export default class GetSpListItemsWebPart extends BaseClientSideWebPart<IGetSpL
               Тестируем работу SPFx
             </span>
             <p class="ms-font-l ms-fontColor-white" style="text-align: center">
-              Demo : Получаем данные о сотрудниках из списка SharePoint
+              Demo : Получаем данные о сотрудниках из списка SharePoint ${this.properties.environment}
             </p>
           </div>
         </div>
@@ -98,40 +100,28 @@ export default class GetSpListItemsWebPart extends BaseClientSideWebPart<IGetSpL
         this.context.pageContext.web.absoluteUrl
       )
       .then( 
-        () => { 
-          const listData: ISPLists = { 
-              value: [
-                { EmployeeId: '22-05-2018', EmployeeName: 'Олег Нестеренко', Experience: '10 лет', Location:'Россия' },
-                { EmployeeId: '20-10-2017', EmployeeName: 'Сергей Невинный', Experience: '4 лет', Location:'Беларусь' },
-                { EmployeeId: '05-05-2016', EmployeeName: 'Варвара Беленькая', Experience: '7 лет', Location:'Россия' },
-                { EmployeeId: '13-05-2018', EmployeeName: 'Максим Всегда', Experience: '2 лет', Location:'Украина' },
-                { EmployeeId: '25-05-2019', EmployeeName: 'Галина Вчерашняя', Experience: '8 лет', Location:'Россия' },  
-              ]
-          }; 
-          return listData; 
-        }
-      ) as Promise<ISPLists>; 
+        (response) => { return response; }
+      ); 
   }
 
-  private _getListData(): Promise<ISPLists> {
+  private _getSPListData(): Promise<ISPLists> {
     return this.context.spHttpClient
       .get( 
         this.context.pageContext.web.absoluteUrl + "/_api/web/lists/GetByTitle('EmployeeList')/Items",
         SPHttpClient.configurations.v1
       )
       .then( 
-        (response) => { 
-          debugger; 
-          return response.json(); 
-        }
+        (response) => { return response.json(); }
       );
   }
 
   private _renderListAsync(): void {
     if (Environment.type === EnvironmentType.Local) {  
       this._getMockListData().then( (response) => { this._renderList(response.value); });
+      this.properties.environment = "(тестовый список)";
     } else { 
-      this._getListData().then( (response) => { this._renderList(response.value); });
+      this._getSPListData().then( (response) => { this._renderList(response.value); });
+      this.properties.environment = "(список портала)";
     }
   }
 
@@ -146,16 +136,16 @@ export default class GetSpListItemsWebPart extends BaseClientSideWebPart<IGetSpL
     items.forEach( (item: ISPList) => {
       html += `
         <tr>
-          <td>${item.EmployeeId}</td>  
-          <td>${item.EmployeeName}</td>  
-          <td>${item.Experience}</td>  
-          <td>${item.Location}</td>  
+          <td>${item.EmployeeId}</td>
+          <td>${item.EmployeeName}</td>
+          <td>${item.Experience}</td>
+          <td>${item.Location}</td>
         </tr>
       `;      
     });
     html += '</table>';
     
-    const listContainer: Element = this.domElement.querySelector('#spListContainer'); 
+    const listContainer: HTMLTableElement = this.domElement.querySelector('#spListContainer'); 
     listContainer.innerHTML = html;
   }
 }

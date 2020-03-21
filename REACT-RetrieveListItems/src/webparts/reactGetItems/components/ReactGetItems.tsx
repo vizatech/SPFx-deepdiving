@@ -8,8 +8,8 @@ export interface IReactGetItemsState {
   items: [{
       "EmployeeName": "",
       "EmployeeId": "",
-      "Experience":"",
-      "Location":""
+      "Experience": "",
+      "Location": ""
     }]
 }   
 
@@ -51,8 +51,8 @@ export default class ReactGetItems extends React.Component<IReactGetItemsProps, 
       items: [{
           "EmployeeName": "",
           "EmployeeId": "",
-          "Experience":"",
-          "Location":""
+          "Experience": "",
+          "Location": ""
         }]
     };
   }

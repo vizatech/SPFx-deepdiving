@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ListInstance
+        FeatureId="f9ce21f8-f437-4f7e-8bc6-946378c850f0"
+        Title="Список задач, добавленный с обновлением v.3"
+        Description="Task List added through Upgrade Action"
+        TemplateType="171"
+        Url="Lists/TasksViaUpgrade2">
+    </ListInstance>
+</Elements>

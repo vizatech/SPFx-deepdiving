@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+
+    <ContentType ID="0x01DDDDDDDD"
+        Name="NetzeDuisburgContentType3"
+        Group="NetzeDuisburg Content Types"
+        Description="This is the Content Type for NetzeDuisburg project">
+
+        <FieldRefs>
+            <RemoveFieldRef ID="{DDDB4CE1-45BC-45C6-81CE-7B607618D044}" />
+            <RemoveFieldRef ID="{BB194C4E-C7DB-4082-950F-F444DD2E58DA}" />
+        </FieldRefs>
+    </ContentType>
+
+</Elements> 

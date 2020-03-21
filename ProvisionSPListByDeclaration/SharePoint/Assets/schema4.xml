@@ -4,13 +4,22 @@
     EnableContentTypes="TRUE" 
     FolderCreation="FALSE" 
     Direction="$Resources:Direction;" 
-    Url="Lists/Basic List" 
+    Url="Lists/Basic List"
     BaseType="0" 
     xmlns="http://schemas.microsoft.com/sharepoint/">
     
     <MetaData>
         <ContentTypes>
-            <ContentTypeRef ID="0x010100FA0963FA69A646AA916D2E41284FC9D1" />
+            <ContentType ID="0x010029DD9E774C03404CAFA262D716A029D4"
+                Name="EmployeeContentType"
+                Group="Employee Content Types">
+                <FieldRefs>
+                    <FieldRef ID="{11ED4026-1C15-4636-80EF-C27C41DB90E0}" />
+                    <FieldRef ID="{1DA0BA30-F87A-4D1B-9303-729AA02BEE25}" />
+                    <FieldRef ID="{197F8587-C417-458D-885E-4FBC28D1F612}" />
+                    <FieldRef ID="{10E72105-7577-4E9E-A758-BBBE8FF4E9BA}" />
+                </FieldRefs>  
+            </ContentType>          
         </ContentTypes>
         
         <Fields></Fields>
@@ -36,7 +45,6 @@
                     <FieldRef Name="LinkTitle"></FieldRef>
                     <FieldRef Name="EmployeeName"></FieldRef>
                     <FieldRef Name="PreviousCompany"></FieldRef>
-                    <FieldRef Name="JoiningDate"></FieldRef>
                     <FieldRef Name="Expertise"></FieldRef>
                     <FieldRef Name="Experience"></FieldRef>
                 </ViewFields>
